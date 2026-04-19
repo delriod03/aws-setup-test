@@ -69,17 +69,20 @@ KEY_OUTPUT=$(aws iam create-access-key --user-name "$USER_NAME")
 ACCESS_KEY=$(echo $KEY_OUTPUT | jq -r '.AccessKey.AccessKeyId')
 SECRET_KEY=$(echo $KEY_OUTPUT | jq -r '.AccessKey.SecretAccessKey')
 
-# ===== SAVE FILE =====
+# ===== SAVE CREDENTIALS (SECURE FILE) =====
 echo "AccessKeyId: $ACCESS_KEY" > CyberMaxxCreds.txt
 echo "SecretAccessKey: $SECRET_KEY" >> CyberMaxxCreds.txt
 
-# ===== OUTPUT =====
+chmod 600 CyberMaxxCreds.txt
+
+# ===== OUTPUT (NO SECRETS) =====
 echo ""
-echo "===== PROVIDE TO CYBERMAXX ====="
-echo "AccessKeyId: $ACCESS_KEY"
-echo "SecretAccessKey: $SECRET_KEY"
-echo "Saved to: CyberMaxxCreds.txt"
-echo "================================"
+echo "===== CYBERMAXX SETUP COMPLETE ====="
+echo "Credentials saved to: CyberMaxxCreds.txt"
+echo "Run: cat CyberMaxxCreds.txt"
+echo "After copying, delete the file with:"
+echo "rm CyberMaxxCreds.txt"
+echo "===================================="
 
 # cleanup
 rm -f policy.json
