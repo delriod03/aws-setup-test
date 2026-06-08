@@ -3,8 +3,8 @@ set -e
 
 echo "=== CyberMaxx Umbrella AWS Setup ==="
 
-USER_NAME="CyberMaxx-Umbrella-SIEM"
-POLICY_NAME="CyberMaxx-Umbrella"
+USER_NAME="CyberMaxx-SIEM-Umbrella"
+POLICY_NAME="CyberMaxx-SIEM-Umbrella"
 
 # ===== CREATE POLICY FILE =====
 cat <<EOF > policy.json
