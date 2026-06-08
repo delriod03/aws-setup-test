@@ -3,8 +3,8 @@ set -e
 
 echo "=== CyberMaxx AWS Setup ==="
 
-USER_NAME="CyberMaxx-Cloud"
-POLICY_NAME="CyberMaxx-CloudTrail"
+USER_NAME="CyberMaxx-SIEM-AWS"
+POLICY_NAME="CyberMaxx-SIEM-AWS"
 
 # ===== CREATE POLICY FILE =====
 cat <<EOF > policy.json
